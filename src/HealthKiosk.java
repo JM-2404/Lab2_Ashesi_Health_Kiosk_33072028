@@ -129,32 +129,25 @@ public class HealthKiosk {
         String shortID = "" + randomChar + digit1 + digit2 + digit3 + digit4;
 
         // Validate the generated ID
-        boolean isValid =true;
-        String errorMessage = "";
+
 
         if (shortID.length() != 5) {
-            isValid = false;
-            errorMessage = "Invalid length";
-        } else if (!Character.isLetter(shortID.charAt(0))) {
-            isValid = false;
-            errorMessage = "Invalid: first char must be a letter";
-        } else {
-            // Check if positions 1-4 are digits
-            for (int i = 1; i <= 4; i++) {
-                if (!Character.isDigit(shortID.charAt(i))) {
-                    isValid = false;
-                    errorMessage = "Invalid: last 4 must be digits";
-                    break;
-                }
-            }
-        }
+            System.out.println("Invalid length");
 
-        if (isValid) {
+        } else if (!Character.isLetter(shortID.charAt(0))) {
+            System.out.println("Invalid: first char must be a letter");
+
+
+        } else if (!Character.isDigit(shortID.charAt(1)) ||
+                    !Character.isDigit(shortID.charAt(2)) ||
+                    !Character.isDigit(shortID.charAt(3)) ||
+                    !Character.isDigit(shortID.charAt(4))) {
+            System.out.println("Invalid: last 4 must be digits");
+        } else {
             System.out.println("ID OK");
             System.out.println("Generated ID: " + shortID);
-        } else {
-            System.out.println(errorMessage);
         }
+
         System.out.println();
 
         // TASK 4: "Secure" Display Code
