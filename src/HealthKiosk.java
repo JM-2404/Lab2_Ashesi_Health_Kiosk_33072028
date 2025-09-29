@@ -129,7 +129,7 @@ public class HealthKiosk {
         String shortID = "" + randomChar + digit1 + digit2 + digit3 + digit4;
 
         // Validate the generated ID
-        boolean isValid = true;
+        boolean isValid =true;
         String errorMessage = "";
 
         if (shortID.length() != 5) {
